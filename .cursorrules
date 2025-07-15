@@ -1,0 +1,58 @@
+# Vibe Coding 最佳实践指南
+
+## 项目规范
+- 使用TypeScript严格模式
+- 所有组件必须有Storybook故事
+- 使用Tailwind CSS原子化类
+- 文件命名: PascalCase (组件), camelCase (工具函数)
+
+## 组件开发规范
+1. 从原子组件开始构建
+2. 每个组件单一职责
+3. 使用Zustand管理状态
+4. 优先使用Server Components
+
+## 代码模板
+### 组件模板
+```typescript
+import { cn } from '@/lib/utils'
+
+interface ComponentNameProps {
+  className?: string
+  children?: React.ReactNode
+}
+
+export function ComponentName({ className, children }: ComponentNameProps) {
+  return (
+    <div className={cn('', className)}>
+      {children}
+    </div>
+  )
+}
+```
+
+### Story模板
+```typescript
+import type { Meta, StoryObj } from '@storybook/react'
+
+const meta: Meta<typeof Component> = {
+  title: 'Components/ComponentName',
+  component: Component,
+  parameters: { layout: 'centered' },
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  args: {},
+}
+```
+
+## 文件结构
+- src/components/_atoms/ - 原子组件
+- src/components/_molecules/ - 分子组件
+- src/components/_organisms/ - 有机体组件
+- src/components/_bits/ - 动画组件
+- src/lib/hooks/ - 自定义Hooks
+- src/stories/ - Storybook故事
