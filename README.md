@@ -39,19 +39,19 @@ src/
 
 ```bash
 # 安装依赖
-npm install
+pnpm install
 
 # 启动开发服务器
-npm run dev
+pnpm dev
 
 # 启动Storybook
-npm run storybook
+pnpm storybook
 
 # 代码格式化
-npm run format
+pnpm format
 
 # 类型检查
-npm run type-check
+pnpm type-check
 ```
 
 ## 🎨 使用指南
@@ -87,6 +87,7 @@ git commit -m "feat: 添加新功能"
 - **动画**: Framer Motion
 - **测试**: Storybook
 - **代码质量**: ESLint + Prettier + Husky
+- **包管理**: pnpm
 
 ## 🛠️ 开发工具
 
@@ -99,8 +100,8 @@ git commit -m "feat: 添加新功能"
 
 ```bash
 # 构建生产版本
-npm run build
+pnpm build
 
 # 启动生产服务器
-npm start
+pnpm start
 ```
